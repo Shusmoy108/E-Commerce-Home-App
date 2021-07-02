@@ -89,17 +89,12 @@ class StoryCart extends StatelessWidget {
               height: 10,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 bottomButton(Icons.card_giftcard,
                     "BDT ${Helper.priceFormat(story.unitPrice.toString())}"),
-                SizedBox(
-                  width: 10,
-                ),
                 bottomButton(Icons.table_rows,
                     "${story.availableStock} Available Stock"),
-                SizedBox(
-                  width: 10,
-                ),
                 bottomButton(
                     Icons.shopping_cart_outlined, "${story.orderQty} Order(s)")
               ],
