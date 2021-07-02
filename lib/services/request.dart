@@ -6,13 +6,12 @@ import 'package:home/enviroments/common.dart';
 import 'package:home/services/appexeception.dart';
 import 'package:http/http.dart' as http;
 
-class BaseClient {
+class Request {
   Future<dynamic> get(String api) async {
     var uri = Uri.parse(SERVER_URL + api);
     try {
       var response =
           await http.get(uri).timeout(Duration(seconds: TIME_OUT_DURATION));
-      print(response);
       if (response.statusCode == 200) {
         var res = jsonDecode(response.body);
         return res;
