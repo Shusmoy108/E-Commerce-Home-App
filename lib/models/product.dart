@@ -66,7 +66,9 @@ class Product {
         sellerProfilePhoto: json["sellerProfilePhoto"],
         sellerCoverPhoto: json["sellerCoverPhoto"],
         ezShopName: json["ezShopName"],
-        defaultPushScore: json["defaultPushScore"],
+        defaultPushScore: json["defaultPushScore"].runtimeType == double
+            ? json["defaultPushScore"].round()
+            : json["defaultPushScore"],
         myProductVarId: json["myProductVarId"],
       );
 

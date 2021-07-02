@@ -62,7 +62,9 @@ class Story {
         story: json["story"],
         storyType: json["storyType"],
         storyImage: json["storyImage"],
-        storyAdditionalImages: json["storyAdditionalImages"],
+        storyAdditionalImages: json["storyAdditionalImages"] == null
+            ? ""
+            : json["storyAdditionalImages"],
         promoImage: json["promoImage"],
         orderQty: json["orderQty"],
         lastAddToCart: DateTime.parse(json["lastAddToCart"]),
